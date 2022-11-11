@@ -1,3 +1,14 @@
+a:link { text-decoration: none; }
+
+
+a:visited { text-decoration: none; }
+
+
+a:hover { text-decoration: none; }
+
+
+a:active { text-decoration: none; }
+
 .navbar-brand{
   float: none;
   position: absolute;
@@ -20,7 +31,7 @@
 }
 
 .bg-img{
-  background-image:linear-gradient(to bottom,rgba(21, 21, 22, 0.267),rgba(21, 21, 22, 0.267));
+   background-image:linear-gradient(to bottom,rgba(21, 21, 22, 0.267),rgba(21, 21, 22, 0.267));
   width:100%;
   height:100%;
   color: white;
@@ -29,97 +40,89 @@
   text-align:center;
   flex-flow:column wrap;
 }
+
 .dark{
   background-color: black;
 }
 
-a, h, h1{
+a, h1{
   font-family: 'Changa', sans-serif;
 }
 
-h{
-  font-size: 75px;
+#search{
+  margin-top: 7.5vh;
 }
 
-h1{
-  color: white;
-  font-size: 50px;
-}
 
-#pro{
+/* ------------------------ */
+#item{
   text-align: center;
 }
 
-#pro .pro-container{
+#item .item-container{
   display: flex;
   justify-content: space-between;
   padding-top: 20px;
   flex-wrap: wrap;
 }
 
-#pro.bst{
-  width: 23%;
+#item .card{
+  width: 30%;
   min-width: 250px;
+  background-color: hsla(0, 0% ,0%, 0);
+  
   padding: 10px 12px;
-  border: 1px solid lightgray;
-  border-radius: 25px;
+/*   border: 1px solid lightgray;
+  border-radius: 25px; */
   cursor: pointer;
   margin: 15px 15;
-  transition: 0.2s ease;
+  transition: 0.5s ;
   position: relative;
 }
-#pro .bst img{
-  width: 100%;
-  border-radius: 60%;
-  height: 400px;
+
+#item .card:hover{
+  transform: scale(1.1, 1.1);
 }
 
-#pro .bst .des{
-  text-align: start;
+#item .card img{
+  margin-left: 25%;
+  width: 50%;
+  border-radius: 50%;
+  height: 50%;
+}
+
+#item .card .des{
+  text-align: center;
   padding: 10px 0;
 }
 
-#pro .bst .des h5{
+#item .card .des h5{
   color: gray;
   font-size: 14px;
 }
 
-#pro .bst .des h4{
+#item .card .des h4{
   color: white;
   font-size: 18px;
 }
 
-#pro .bst .des h3{
+#item .card .des h3{
   color: green;
   font-size: 20px
 }
 
-.img-pro{
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  margin-bottom:20px;
+/* ------------------------ */
+
+#itemcat{
+  height: 100vh;
 }
-.bs{
-  float: left;
-  width: 30%;
-  vertical-align: top;
-  display: inline-block;
-  text-align: center;
-  font-family: 'Changa', sans-serif;
+
+.usable{
   color: white;
+  margin-top: 7.5vh;
 }
 
-.bs-cen{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 60px;
-}
-
-.title{
+.topic{
   text-align: center;
-}
-.ex{
-  margin-top: 100px;
+  font-size: 12vh;
 }

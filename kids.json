@@ -1,0 +1,122 @@
+[
+  {
+    "brand" : "Nike",
+    "shoes" : [
+      {
+        "name" : "NIKE Kawa",
+        "price" : 900,
+        "pic" : "[insert pic link here]"
+      },
+      {
+        "name" : "NIKE Kawa Slides",
+        "price" : 700,
+        "pic" : "[insert pic link here]"
+      },
+      {
+        "name" : "NIKE Sunray Adjust",
+        "price" : 1300,
+        "pic" : "[insert pic link here]"
+      },
+      {
+        "name" : "NIKE Jordan Play",
+        "price" : 1200,
+        "pic" : "[insert pic link here]"
+      },
+      {
+        "name" : "NIKE Playscape",
+        "price" : 880,
+        "pic" : "[insert pic link here]"
+      }
+    ]
+  },
+  {
+    "brand" : "Adidas",
+    "shoes" : [
+      {
+        "name" : "ADIDAS Adilette ADJUSTABLE",
+        "price" : 1100,
+        "pic" : "[insert pic link here]"
+      },
+       {
+        "name" : "ADIDAS Adilette Aqua",
+        "price" : 700,
+        "pic" : "[insert pic link here]"
+      },
+      {
+        "name" : "ADIDAS Adilette Comfort X LEGO",
+        "price" : 1200,
+        "pic" : "[insert pic link here]"
+      },
+      {
+        "name" : "ADIDAS Adilette Comfort Minnie Mouse",
+        "price" : 1200,
+        "pic" : "[insert pic link here]"
+      },
+       {
+        "name" : "ADIDAS Altaswim",
+        "price" : 1100,
+        "pic" : "[insert pic link here]"
+      }
+    ]
+  },
+  {
+    "brand" : "Fila",
+    "shoes" : [
+      {
+        "name" : "FILA RGB",
+        "price" : 450,
+        "pic" : "[insert pic link here]"
+      },
+      {
+        "name" : "FILA Sleek Marble",
+        "price" : 780,
+        "pic" : "[insert pic link here]"
+      },
+       {
+        "name" : "FILA Slides Kids",
+        "price" : 330,
+        "pic" : "[insert pic link here]"
+      },
+       {
+        "name" : "FILA Nuovo",
+        "price" : 590,
+        "pic" : "[insert pic link here]"
+      },
+       {
+        "name" : "FILA Holo",
+        "price" : 450,
+        "pic" : "[insert pic link here]"
+      }
+    ]
+  },
+  {
+    "brand" : "Skechers",
+    "shoes" : [
+      {
+        "name" : "SKECHERS Gambix",
+        "price" : 780,
+        "pic" : "[insert pic link here]"
+      },
+      {
+        "name" : "SKECHERS Foamies: Cali Blast",
+        "price" : 780,
+        "pic" : "[insert pic link here]"
+      },
+      {
+        "name" : "SKECHERS Sargo Sunview",
+        "price" : 1390,
+        "pic" : "[insert pic link here]"
+      },
+      {
+        "name" : "SKECHERS We Bare Bears Pop Ups 2 BOBS",
+        "price" : 1290,
+        "pic" : "[insert pic link here]"
+      },
+      {
+        "name" : "SKECHERS Foamies x Pokemon Collection",
+        "price" : 1990,
+        "pic" : "[insert pic link here]"
+      }
+    ]
+  }
+]
