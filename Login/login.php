@@ -22,23 +22,23 @@
 </head>
 <body class="dark">
 <!-- Nav Bar (TOP) -->
-  <nav class="navbar navbar-expand-lg navbar-dark dark  fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark dark fixed-top">
     <div class="container-fluid">
         <ul class="navbar-nav float-left">
           <li class="nav-item">
-            <a class="nav-link" href="../men.php">MEN</a>
+            <a class="nav-link" href="../search.php?gender=men">MEN</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../women.php">WOMEN</a>
+            <a class="nav-link" href="../search.php?gender=women">WOMEN</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../kids.php">KIDS</a>
+            <a class="nav-link" href="../search.php?gender=kids">KIDS</a>
           </li>
         </ul>
         <a class="navbar-brand" href="../index.php">BENBOOTS SHOP</a>
         <ul class="navbar-nav float-right"> 
           <li class="nav-item">
-            <a class="nav-link" href="#">CART</a>
+            <a class="nav-link" href="../cart.php">CART</a>
           </li>
           <li class="nav-item">
             <?php

@@ -27,24 +27,24 @@
     <div class="container-fluid">
         <ul class="navbar-nav float-left">
           <li class="nav-item">
-            <a class="nav-link" href="../men.php">MEN</a>
+            <a class="nav-link" href="../search.php?gender=men">MEN</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../women.php">WOMEN</a>
+            <a class="nav-link" href="../search.php?gender=women">WOMEN</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../kids.php">KIDS</a>
+            <a class="nav-link" href="../search.php?gender=kids">KIDS</a>
           </li>
         </ul>
         <a class="navbar-brand" href="../index.php">BENBOOTS SHOP</a>
         <ul class="navbar-nav float-right"> 
           <li class="nav-item">
-            <a class="nav-link" href="#">CART</a>
+            <a class="nav-link" href="../cart.php">CART</a>
           </li>
           <li class="nav-item">
             <?php
                if(isset($_SESSION['name'])){
-                 echo '<a class="nav-link" href="../Login/login.php" >'.$_SESSION['name'].'</a>';
+                 echo '<a class="nav-link" href="../user.php" >'. $_SESSION['name'] .'</a>';
                }
               else{
                 echo '<a class="nav-link" href="../Login/login.php" >LOGIN</a>';

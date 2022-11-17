@@ -5,41 +5,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Women</title>
+    <title>Main Page</title>
 
-    <link href="index.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
+    <link href="user.css" rel="stylesheet">
   
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Changa&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+<link href="https://fonts.googleapis.com/css2?family=Changa&display=swap" rel="stylesheet">
+
 
 </head>
-
 <body class="dark">
 <!-- Nav Bar (TOP) -->
   <nav class="navbar navbar-expand-lg navbar-dark dark fixed-top">
     <div class="container-fluid">
         <ul class="navbar-nav float-left">
           <li class="nav-item">
-            <a class="nav-link" href="../men.php">MEN</a>
+            <a class="nav-link" href="../search.php?gender=men">MEN</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../women.php">WOMEN</a>
+            <a class="nav-link" href="../search.php?gender=women">WOMEN</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../kids.php">KIDS</a>
+            <a class="nav-link" href="../search.php?gender=kids">KIDS</a>
           </li>
         </ul>
         <a class="navbar-brand" href="../index.php">BENBOOTS SHOP</a>
         <ul class="navbar-nav float-right"> 
           <li class="nav-item">
-            <a class="nav-link" href="#">CART</a>
+            <a class="nav-link" href="../cart.php">CART</a>
           </li>
           <li class="nav-item">
             <?php
                if(isset($_SESSION['name'])){
-                 echo '<a class="nav-link" href="../Login/login.php" >'.$_SESSION['name'].'</a>';
+                 echo '<a class="nav-link" href="../user.php" >'. $_SESSION['name'] .'</a>';
                }
               else{
                 echo '<a class="nav-link" href="../Login/login.php" >LOGIN</a>';
@@ -48,13 +51,23 @@
           </li>
         </ul>
   </nav>
-      
 
+  <div class="container usable long">
+    <div class="row">
+      <div class="col-lg-8 bg-light">
+    <?php
+      echo '<h2 class="text-dark"> USERNAME : ' . $_SESSION['name'] . '</h2>';
+      echo '<h2 class="text-dark"> ADDRESS : ' . $_SESSION['address'] . '</h2>';
+      echo'<form action="index.php" method="post">';
+      echo'<a href="logout.php"><input type="Button" value="Logout" class="btn btn-darrk"></a>';
+      echo'/form>';
+    ?>
 
-
-
-
-      
-  
+      </div>
+      <div class="col-lg-4">
+        <h1> Wishlist </h1>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

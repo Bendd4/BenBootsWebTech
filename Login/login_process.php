@@ -32,7 +32,7 @@
            
         }
         else{
-            $sql ="SELECT * from user ";
+            $sql ="SELECT * from user WHERE username = '$username' ";
             $ret = $db->query($sql);
             while($row = $ret->fetchArray(SQLITE3_ASSOC) ) {
             

@@ -29,23 +29,26 @@
 $db = new MyDB();
 if(!$db) {
    echo $db->lastErrorMsg();
-} 
+}
 
 // Query process 
-// $sql =<<<EOF
-// CREATE TABLE user
-// (username TEXT PRIMARY KEY     NOT NULL,
-// password           TEXT    NOT NULL,
-// email     TEXT    NOT NULL,
-// address        TEXT    NOT NULL);
-// EOF;
+$sql =<<<EOF
+CREATE TABLE user
+(username TEXT PRIMARY KEY     NOT NULL,
+password           TEXT    NOT NULL,
+email     TEXT    NOT NULL,
+address        TEXT    NOT NULL,
+cart TEXT,
+wishlist TEXT,
+history TEXT);
+EOF;
 
-// $ret = $db->exec($sql);
-// if(!$ret){
-// echo $db->lastErrorMsg();
-// } else {
-// echo "Table created successfully<br>";
-// }
+$ret = $db->exec($sql);
+if(!$ret){
+echo $db->lastErrorMsg();
+} else {
+echo "Table created successfully<br>";
+}
 
 // Close database
 $db->close();

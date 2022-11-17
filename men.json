@@ -10,7 +10,7 @@
       {
         "name" : "NIKE Jordan Break",
         "price" : 1100,
-        "pic" : "[insert pic link here]"
+        "pic" : "../picture/men/NIKE Jordan Break"
       },
       {
         "name" : "NIKE Offcourt",

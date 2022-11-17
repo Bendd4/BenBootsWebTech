@@ -25,111 +25,110 @@
     <div class="container-fluid">
         <ul class="navbar-nav float-left">
           <li class="nav-item">
-            <a class="nav-link" href="../men.php">MEN</a>
+            <a class="nav-link" href="../search.php?gender=men">MEN</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../women.php">WOMEN</a>
+            <a class="nav-link" href="../search.php?gender=women">WOMEN</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../kids.php">KIDS</a>
+            <a class="nav-link" href="../search.php?gender=kids">KIDS</a>
           </li>
         </ul>
-        <a class="navbar-brand" href="index.php">BENBOOTS SHOP</a>
+        <a class="navbar-brand" href="../index.php">BENBOOTS SHOP</a>
         <ul class="navbar-nav float-right"> 
           <li class="nav-item">
-            <a class="nav-link" href="#">CART</a>
+            <a class="nav-link" href="../cart.php">CART</a>
           </li>
           <li class="nav-item">
             <?php
                if(isset($_SESSION['name'])){
-                 echo '<a class="nav-link" href="../Login/login.php" >'.$_SESSION['name'].'</a>';
+                 echo '<a class="nav-link" href="../user.php" >'.$_SESSION['name'].'</a>';
                }
               else{
                 echo '<a class="nav-link" href="../Login/login.php" >LOGIN</a>';
               }
+
+
             ?>
           </li>
         </ul>
   </nav>
       
-  <div class="img" id="thumbnail">
+  <div class="img usable" id="thumbnail">
     <div class="bg-img">
       <h>Welcome to BENBOOTS</h>
     </div>
   </div>
 
-<div class="ex">
+  <div id="item">
     <h1 class="title">Men Best Sell</h1>
-    <div class="bs-cen">
-      <div class="bs"  onclick="window.location.href='../detail.php';">
-        <img class="img-pro" src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t31.18172-8/210992_100183006801959_711567220_o.jpg?_nc_cat=106&ccb=1-7&_nc_sid=de6eea&_nc_ohc=ZtaGKqWQmOMAX9Z1BCC&_nc_ht=scontent.fbkk7-2.fna&oh=00_AfD5crCL8sbYcbuK3BNGWxLua_d1qgOpQJhd54ImBNRMXg&oe=63919503">
-        <div>
-          <h2 class="txt-pro">Product name</h2>
-          <h4 class="txt-pro">Product detail</h4>
-        </div>
-      </div>
-      <div class="bs">
-        <img class="img-pro" src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t31.18172-8/210992_100183006801959_711567220_o.jpg?_nc_cat=106&ccb=1-7&_nc_sid=de6eea&_nc_ohc=ZtaGKqWQmOMAX9Z1BCC&_nc_ht=scontent.fbkk7-2.fna&oh=00_AfD5crCL8sbYcbuK3BNGWxLua_d1qgOpQJhd54ImBNRMXg&oe=63919503">
-        <div>
-          <h2 class="txt-pro">Product name</h2>
-          <h4 class="txt-pro">Product detail</h4>
-        </div>
-      </div>
-      <div class="bs">
-        <img class="img-pro" src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t31.18172-8/210992_100183006801959_711567220_o.jpg?_nc_cat=106&ccb=1-7&_nc_sid=de6eea&_nc_ohc=ZtaGKqWQmOMAX9Z1BCC&_nc_ht=scontent.fbkk7-2.fna&oh=00_AfD5crCL8sbYcbuK3BNGWxLua_d1qgOpQJhd54ImBNRMXg&oe=63919503">
-        <div>
-          <h2 class="txt-pro">Product name</h2>
-         <h4 class="txt-pro">Product detail</h4>
-        </div>
-      </div>
+      <div class="item-container">
+    <?php
+      $file = file_get_contents( 'men.json' );
+      $data = json_decode( $file );
+      for( $i=0; $i < 3; $i++ ) {
+          $brand = $data[$i]->brand;
+          $shoes = $data[$i]->shoes;
+              $shoePrice = $shoes[1]->price;
+              $shoeName = $shoes[1]->name;
+              echo "<a href='detail.php?gender=". 'men' ."&name=" . $shoeName . "' class='card'>";
+                echo '<img src="../picture/' . 'men' . '/' . $shoeName . '.jpg" alt="">';
+                echo '<div class="des">';
+                  echo '<h5>'. $brand .'</h5>';
+                  echo '<h4>'. $shoeName .'</h4>';
+                  echo '<h3>'. $shoePrice . '฿' .'</h3>';
+                echo '</div>';
+            echo'</a>';
+
+        }
+    ?>
     </div>
+  </div>
+    
+  <div id="item">
     <h1 class="title">Women Best Sell</h1>
-    <div class="bs-cen">
-      <div class="bs"  onclick="window.location.href='../detail.php';">
-        <img class="img-pro" src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t31.18172-8/210992_100183006801959_711567220_o.jpg?_nc_cat=106&ccb=1-7&_nc_sid=de6eea&_nc_ohc=ZtaGKqWQmOMAX9Z1BCC&_nc_ht=scontent.fbkk7-2.fna&oh=00_AfD5crCL8sbYcbuK3BNGWxLua_d1qgOpQJhd54ImBNRMXg&oe=63919503">
-        <div>
-          <h2 class="txt-pro">Product name</h2>
-          <h4 class="txt-pro">Product detail</h4>
-        </div>
-      </div>
-      <div class="bs">
-        <img class="img-pro" src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t31.18172-8/210992_100183006801959_711567220_o.jpg?_nc_cat=106&ccb=1-7&_nc_sid=de6eea&_nc_ohc=ZtaGKqWQmOMAX9Z1BCC&_nc_ht=scontent.fbkk7-2.fna&oh=00_AfD5crCL8sbYcbuK3BNGWxLua_d1qgOpQJhd54ImBNRMXg&oe=63919503">
-        <div>
-          <h2 class="txt-pro">Product name</h2>
-          <h4 class="txt-pro">Product detail</h4>
-        </div>
-      </div>
-      <div class="bs">
-        <img class="img-pro" src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t31.18172-8/210992_100183006801959_711567220_o.jpg?_nc_cat=106&ccb=1-7&_nc_sid=de6eea&_nc_ohc=ZtaGKqWQmOMAX9Z1BCC&_nc_ht=scontent.fbkk7-2.fna&oh=00_AfD5crCL8sbYcbuK3BNGWxLua_d1qgOpQJhd54ImBNRMXg&oe=63919503">
-        <div>
-          <h2 class="txt-pro">Product name</h2>
-          <h4 class="txt-pro">Product detail</h4>
-        </div>
-      </div>
+      <div class="item-container">
+    <?php
+      $file = file_get_contents( 'women.json' );
+      $data = json_decode( $file );
+      for( $i=0; $i < 3; $i++ ) {
+          $brand = $data[$i]->brand;
+          $shoes = $data[$i]->shoes;
+              $shoePrice = $shoes[1]->price;
+              $shoeName = $shoes[1]->name;
+              echo "<a href='detail.php?gender=". 'women' ."&name=" . $shoeName . "' class='card'>";
+                echo '<img src="../picture/' . 'women' . '/' . $shoeName . '.jpg" alt="">';
+                echo '<div class="des">';
+                  echo '<h5>'. $brand .'</h5>';
+                  echo '<h4>'. $shoeName .'</h4>';
+                  echo '<h3>'. $shoePrice . '฿' .'</h3>';
+                echo '</div>';
+            echo'</a>';
+        }
+    ?>
     </div>
+  </div>
+    <div id="item">
     <h1 class="title">Kids Best Sell</h1>
-    <div class="bs-cen">
-      <div class="bs"  onclick="window.location.href='../detail.php';">
-        <img class="img-pro" src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t31.18172-8/210992_100183006801959_711567220_o.jpg?_nc_cat=106&ccb=1-7&_nc_sid=de6eea&_nc_ohc=ZtaGKqWQmOMAX9Z1BCC&_nc_ht=scontent.fbkk7-2.fna&oh=00_AfD5crCL8sbYcbuK3BNGWxLua_d1qgOpQJhd54ImBNRMXg&oe=63919503">
-        <div>
-          <h2 class="txt-pro">Product name</h2>
-          <h4 class="txt-pro">Product detail</h4>
-        </div>
-      </div>
-      <div class="bs">
-        <img class="img-pro" src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t31.18172-8/210992_100183006801959_711567220_o.jpg?_nc_cat=106&ccb=1-7&_nc_sid=de6eea&_nc_ohc=ZtaGKqWQmOMAX9Z1BCC&_nc_ht=scontent.fbkk7-2.fna&oh=00_AfD5crCL8sbYcbuK3BNGWxLua_d1qgOpQJhd54ImBNRMXg&oe=63919503">
-        <div>
-          <h2 class="txt-pro">Product name</h2>
-          <h4 class="txt-pro">Product detail</h4>
-        </div>
-      </div>
-      <div class="bs">
-        <img class="img-pro" src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t31.18172-8/210992_100183006801959_711567220_o.jpg?_nc_cat=106&ccb=1-7&_nc_sid=de6eea&_nc_ohc=ZtaGKqWQmOMAX9Z1BCC&_nc_ht=scontent.fbkk7-2.fna&oh=00_AfD5crCL8sbYcbuK3BNGWxLua_d1qgOpQJhd54ImBNRMXg&oe=63919503">
-        <div>
-          <h2 class="txt-pro">Product name</h2>
-         <h4 class="txt-pro">Product detail</h4>
-        </div>
-      </div>
+      <div class="item-container">
+    <?php
+      $file = file_get_contents( 'kids.json' );
+      $data = json_decode( $file );
+      for( $i=0; $i < 3; $i++ ) {
+          $brand = $data[$i]->brand;
+          $shoes = $data[$i]->shoes;
+              $shoePrice = $shoes[1]->price;
+              $shoeName = $shoes[1]->name;
+              echo "<a href='detail.php?gender=". 'kids' ."&name=" . $shoeName . "' class='card'>";
+                echo '<img src="../picture/' . 'kids' . '/' . $shoeName . '.jpg" alt="">';
+                echo '<div class="des">';
+                  echo '<h5>'. $brand .'</h5>';
+                  echo '<h4>'. $shoeName .'</h4>';
+                  echo '<h3>'. $shoePrice . '฿' .'</h3>';
+                echo '</div>';
+            echo'</a>';
+        }
+    ?>
     </div>
   </div>
 </body>

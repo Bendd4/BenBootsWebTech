@@ -5,7 +5,7 @@
      // Connect to Database 
    class MyDB extends SQLite3 {
     function __construct() {
-       $this->open('user_db/user.db');
+       $this->open('../user_db/user.db');
     }
  }
 
@@ -67,7 +67,7 @@
             VALUES ('$username','$password', '$email', '$address');
             EOF;
             $reg = $db->exec($Insert);
-            header("location: login.php");
+            header("location: ../Login/login.php");
         }
 
 

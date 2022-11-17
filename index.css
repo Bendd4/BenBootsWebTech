@@ -7,20 +7,22 @@
 }
 
 .img{
-  height:500px;
+  height: 32vw;
   font-size:4vw;
   box-sizing:border-box;
   text-align:center;
-  background-image: url(https://images.squarespace-cdn.com/content/v1/54477b58e4b03eb4b6e27ac7/1528295910263-RHST9EVDZHFCV2PC2V6E/woman+barefoot+walking+on+the+beach+at+sunset.jpg?format=1500w);
-  background-size:cover;
-  background-position:center;
+  background-image: url("../picture/main bg.jpg");
+  background-size: contain;
+  background-position:center top;
+  background-repeat: no-repeat;
   display:flex;
   background-attachment:fixed;
   position:relative;
+  margin-bottom: 7vh;
 }
 
 .bg-img{
-  background-image:linear-gradient(to bottom,rgba(21, 21, 22, 0.267),rgba(21, 21, 22, 0.267));
+  background-image: linear-gradient(to bottom,rgba(21, 21, 22, 0.267),rgba(21, 21, 22, 0.267));
   width:100%;
   height:100%;
   color: white;
@@ -46,80 +48,117 @@ h1{
   font-size: 50px;
 }
 
-#pro{
-  text-align: center;
-}
-
-#pro .pro-container{
-  display: flex;
-  justify-content: space-between;
-  padding-top: 20px;
-  flex-wrap: wrap;
-}
-
-#pro.bst{
-  width: 23%;
-  min-width: 250px;
-  padding: 10px 12px;
-  border: 1px solid lightgray;
-  border-radius: 25px;
-  cursor: pointer;
-  margin: 15px 15;
-  transition: 0.2s ease;
-  position: relative;
-}
-#pro .bst img{
-  width: 100%;
-  border-radius: 60%;
-  height: 400px;
-}
-
-#pro .bst .des{
-  text-align: start;
-  padding: 10px 0;
-}
-
-#pro .bst .des h5{
-  color: gray;
-  font-size: 14px;
-}
-
-#pro .bst .des h4{
-  color: white;
-  font-size: 18px;
-}
-
-#pro .bst .des h3{
-  color: green;
-  font-size: 20px
-}
-
 .img-pro{
   width: 250px;
   height: 250px;
   border-radius: 50%;
   margin-bottom:20px;
 }
-.bs{
-  float: left;
-  width: 30%;
-  vertical-align: top;
-  display: inline-block;
+
+/* ------------------------------------------------- */
+a:link { text-decoration: none; }
+
+
+a:visited { text-decoration: none; }
+
+
+a:hover { text-decoration: none; }
+
+
+a:active { text-decoration: none; }
+
+#item{
   text-align: center;
-  font-family: 'Changa', sans-serif;
-  color: white;
 }
 
-.bs-cen{
+#item .item-container{
+  item-align: center;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 60px;
+  padding-top: 20px;
+  flex-wrap: wrap;
 }
 
+#item .card{
+  width: 30%;
+  min-width: 250px;
+  background-color: hsla(0, 0% ,0%, 0);
+  
+  padding: 10px 12px;
+/*   border: 1px solid lightgray;
+  border-radius: 25px; */
+  cursor: pointer;
+  margin: 15px 15;
+  transition: 0.5s ;
+  position: relative;
+}
+
+#item .card:hover{
+  transform: scale(1.1, 1.1);
+}
+
+#item .card img{
+  margin-left: 25%;
+  width: 50%;
+  border-radius: 50%;
+  height: 50%;
+}
+
+#item .card .des{
+  text-align: center;
+  padding: 10px 0;
+}
+
+#item .card .des h5{
+  color: gray;
+  font-size: 14px;
+  height: auto;
+}
+
+#item .card .des h4{
+  color: white;
+  font-size: 18px;
+}
+
+#item .card .des h3{
+  color: green;
+  font-size: 20px
+}
+
+form{
+  font-family: 'Changa', sans-serif;
+  margin:20px;
+  font-size:20px;
+}
+
+button.btn.btn-success{
+  margin-top: 15px;
+  border: 2px solid #ffffff; /* Green */
+  background: none;
+}
+
+input.form-check-input{
+  width: 20px;
+  height: 20px;
+}
+
+/* ------------------------------------------------- */
 .title{
   text-align: center;
 }
+
 .ex{
   margin-top: 100px;
+}
+
+.usable{
+  color: white;
+  margin-top: 7.5vh;
+}
+
+@media screen and (max-width:991px) {
+  .usable{
+    color: white;
+    margin-top: 16.5vh;
+  }
 }
