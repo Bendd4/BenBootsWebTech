@@ -1,3 +1,4 @@
+<?php error_reporting(0); ?>
 <?php session_start(); ?>
 
 <html lang="en">
@@ -16,6 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Changa&display=swap" rel="stylesheet">
+
 </head>
 
 <body class="dark">
@@ -141,34 +143,30 @@
     $file = file_get_contents( $_GET['gender'] . '.json' );
     
     $data = json_decode( $file );
-    $minP = 0;
-    $maxP = 99999;
-    if (isset($_POST['price'])) {
-      switch ($_POST['price']) {
-        case "300":
-          $minP = 300;
-          $maxP = 600;
-          break;
-        case "600":
-          $minP = 600;
-          $maxP = 900;
-          break;
-        case "900":
-          $minP = 900;
-          $maxP = 1200;
-          break;
-        case "1200":
-          $minP = 1200;
-          $maxP = 1500;
-          break;
-        case "1500":
-          $minP = 1500;
-          $maxP = 99999;
-          break;
-        default:
-          $minP = 0;
-          $maxP = 99999;
-      }
+    switch ($_POST['price']) {
+      case "300":
+        $minP = 300;
+        $maxP = 600;
+        break;
+      case "600":
+        $minP = 600;
+        $maxP = 900;
+        break;
+      case "900":
+        $minP = 900;
+        $maxP = 1200;
+        break;
+      case "1200":
+        $minP = 1200;
+        $maxP = 1500;
+        break;
+      case "1500":
+        $minP = 1500;
+        $maxP = 99999;
+        break;
+      default:
+        $minP = 0;
+        $maxP = 99999;
     }
     // ระบบกรอง
     if (isset($_POST['brand'])){

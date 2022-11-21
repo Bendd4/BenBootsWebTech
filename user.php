@@ -1,3 +1,4 @@
+<?php error_reporting(0); ?>
 <?php session_start(); 
 
 class MyDB extends SQLite3 {
@@ -54,7 +55,7 @@ class MyDB extends SQLite3 {
             <?php
               
                if(isset($_SESSION['name'])){
-                  if(isset($_GET['save'])){
+                  if($_GET['save']==1){
                   echo '<a class="nav-link" href="user.php" >'. $_POST['username'] .'</a>';
                }
                   else{
@@ -76,7 +77,7 @@ class MyDB extends SQLite3 {
         <div class="row">
     <?php
    
-      if(isset($_GET['save'])){
+      if($_GET['save']==1){
          $user_username_update =  $db->querySingle("UPDATE user set username ='".$_POST['username']."' WHERE username ='".$_SESSION['name']."'");
            // $user_cart_del = $db->querySingle("UPDATE user SET cart = '' WHERE username     ='$uname'");
     $_SESSION['name'] = $_POST['username'];
@@ -88,7 +89,7 @@ class MyDB extends SQLite3 {
          
         // echo$_POST['username'].$_POST['address'];
       }
-      if(isset($_GET['edit'])!=1){
+      if($_GET['edit']!=1){
            $user_address =  $db->querySingle("SELECT address FROM user WHERE username ='".$_SESSION['name']."'");
          echo '<h2 class="text-dark p-2 "> USERNAME : ' . $_SESSION['name'] . '</h2>';
          echo '<h2 class="text-dark p-2"> ADDRESS : ' . $user_address . '</h2>';
@@ -97,7 +98,7 @@ class MyDB extends SQLite3 {
          echo '</a>'; 
          
       }
-      elseif(isset($_GET['edit'])==1){
+      elseif($_GET['edit']==1){
           echo'<form action="user.php?save=1" method="POST" >';
           echo '<h2 class="text-dark p-2 col-sm-12 d-flex flex-row"> USERNAME : ';
          echo'<input type="text" class="form-control w-50 col-sm-6 ms-2" name="username" placeholder="USERNAME">';
@@ -165,7 +166,7 @@ class MyDB extends SQLite3 {
             //   echo '</div>';
             //   echo'</a>';
 
-            echo '<div class="container bg-light p-2 text-dark h-10"> ';
+            echo '<div class="container bg-light p-2 text-dark h-10" id="'.$i.'"> ';
               echo '<div class="row">';
                 echo '<div class="col-sm-6">';
                   echo '<h5>' . $text[0] . '</h5>';

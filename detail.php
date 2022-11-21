@@ -1,3 +1,4 @@
+<?php error_reporting(0); ?>
 <?php 
   session_start(); 
 
@@ -7,8 +8,12 @@
            $this->open('user_db/user.db');
         }
      }
+    
      // Open Database 
      $db = new MyDB();
+          
+
+
 ?>
 
 <html lang="en">
@@ -275,55 +280,51 @@
             echo "<a href='detail.php?gender=". $_GET['gender'] ."&name=" . $shoeName . "&wish=true'>";
             $user_wish = $db->querySingle("SELECT wishlist FROM user WHERE username ='".$_SESSION['name']."'");
             $has = 0;
-            $wish = trim($user_wish, ',');
-            $wish = explode(',', $wish);
-            foreach ($wish as $wish) {
-               $wish = explode(':', $wish);
-               if ($wish[0] == $_GET['name']){
-                 $has = 1;
-               }
-            }
-            if(isset($_GET['wish'])){
+              $wish = trim($user_wish, ',');
+              $wish = explode(',', $wish);
+              foreach ($wish as $wish) {
+                 $wish = explode(':', $wish);
+                 if ($wish[0] == $_GET['name']){
+                   $has = 1;
+                 }
+              }
               if($_GET['wish']==true&&$has==0){
-                $user_wish_add = $db->querySingle("UPDATE user SET wishlist = '"
-                . $user_wish .
-                 $shoeName .
-                ":".$_GET['gender']."/".$_GET['name'].".jpg".
-                ":".$_GET['gender'].
-                ",".
-                "'
-                WHERE username ='".$_SESSION['name']."'");
-                echo'<button class="btn btn-dark add">Remove from wishlist</button>';
+                  $user_wish_add = $db->querySingle("UPDATE user SET wishlist = '"
+                    . $user_wish .
+                     $shoeName .
+                    ":".$_GET['gender']."/".$_GET['name'].".jpg".
+                    ":".$_GET['gender'].
+                    ",".
+                    "'
+                    WHERE username ='".$_SESSION['name']."'");
+                echo'<button class="btn btn-dark add">Remove from wishlist</button>';   
               }
               else if($_GET['wish']==true&&$has==1){
-                $user_wish = $db->querySingle("SELECT wishlist FROM user WHERE username ='".$_SESSION['name']."'");
-                $total_wish = '';
-                $wish = trim($user_wish, ',');
-                $wish = explode(',', $wish);
-                foreach ($wish as $wish) {
-                  $wish = explode(':', $wish);
-                  if ($wish[0] == $_GET['name']){
+                 $user_wish = $db->querySingle("SELECT wishlist FROM user WHERE username ='".$_SESSION['name']."'");
+                  $total_wish = '';
+                 $wish = trim($user_wish, ',');
+                 $wish = explode(',', $wish);
+                 foreach ($wish as $wish) {
+                     $wish = explode(':', $wish);
+                     if ($wish[0] == $_GET['name']){
                       
-                  }
-                  else{
-                    $total_wish = $total_wish.$wish[0].":".$wish[1].":".$wish[2].",";
-                    $user_wish_add = $db->querySingle("UPDATE user SET wishlist = '". $total_wish."' WHERE username ='".$_SESSION['name']."'");
-                  }
-                }
+                     }
+                     else{
+                       $total_wish = $total_wish.$wish[0].":".$wish[1].":".$wish[2].",";
+                         $user_wish_add = $db->querySingle("UPDATE user SET wishlist = '". $total_wish."' WHERE username ='".$_SESSION['name']."'");
+                     }
+                 }
+              
                 echo'<button class="btn btn-dark add">Add to wishlist</button>';
               }
-              // else if($_GET['wish']!=true&&$has==1){
-              //   echo'<button class="btn btn-dark add">Remove from wishlist</button>';
-              // }
-              // else if($_GET['wish']!=true&&$has==0){
-              //   echo'<button class="btn btn-dark add">Add to wishlist</button>';
-              // }
-            }
-            else{
-              echo'<button class="btn btn-dark add">Add to wishlist</button>';
-            }
-          echo'</a>';
-              
+              else if($_GET['wish']!=true&&$has==1){
+                echo'<button class="btn btn-dark add">Remove from wishlist</button>';
+              }
+              else if($_GET['wish']!=true&&$has==0){
+                echo'<button class="btn btn-dark add">Add to wishlist</button>';
+              }
+
+            echo'</a>';
          ?>
         </div>
         
@@ -380,11 +381,11 @@
             $uname = $_SESSION['name'];
               if(isset($_SESSION['name'])){
                 echo "<button type='submit' class='btn btn-dark add'>Add to CART</button>";
-                  if(isset($_GET['add'])){
+                  if($_GET['add']==true){
                     $user_cart = $db->querySingle("SELECT cart FROM user WHERE username ='$uname'");
                     $user_cart_add = $db->querySingle("UPDATE user SET cart = '"
                     . $user_cart .
-                    $shoeName .
+                     $shoeName .
                     ":".$_POST['size'].
                     ":".$_POST['quantity'].  
                     ":".$_GET['gender']."/".$_GET['name'].".jpg".
@@ -406,9 +407,9 @@
           ?>
         </form>
         </div>
-             <?php  if(isset($_GET['add'])) { ?>
+             <?php if($_GET['add']==true) { ?>
                   <br>
-                  <div class="alert alert-success " role="alert">
+                  <div class="alert alert-success mt-5" role="alert">
                      Added to cart
                   </div>
         <?php } ?>     
