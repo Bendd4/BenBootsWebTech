@@ -408,7 +408,7 @@
         </div>
              <?php if($_GET['add']==true) { ?>
                   <br>
-                  <div class="alert alert-success mt-5" role="alert">
+                  <div class="alert alert-success " role="alert">
                      Added to cart
                   </div>
         <?php } ?>     
