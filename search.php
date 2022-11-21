@@ -10,13 +10,12 @@
     ?>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-    <link href="../search.css" rel="stylesheet">
+    <link href="search.css" rel="stylesheet">
   
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Changa&display=swap" rel="stylesheet">
-
 </head>
 
 <body class="dark">
@@ -25,35 +24,35 @@
     <div class="container-fluid">
         <ul class="navbar-nav float-left">
           <li class="nav-item">
-            <a class="nav-link" href="../search.php?gender=men">MEN</a>
+            <a class="nav-link" href="search.php?gender=men">MEN</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../search.php?gender=women">WOMEN</a>
+            <a class="nav-link" href="search.php?gender=women">WOMEN</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../search.php?gender=kids">KIDS</a>
+            <a class="nav-link" href="search.php?gender=kids">KIDS</a>
           </li>
         </ul>
-        <a class="navbar-brand" href="../index.php">BENBOOTS SHOP</a>
+        <a class="navbar-brand" href="index.php">BENBOOTS SHOP</a>
         <ul class="navbar-nav float-right"> 
           <li class="nav-item">
            <?php
                if(isset($_SESSION['name'])){
-                 echo '<a class="nav-link" href="../cart.php">CART</a>';
+                 echo '<a class="nav-link" href="cart.php">CART</a>';
                }
               else{
-                echo '<a class="nav-link" href="../Login/login.php" >CART</a>';
+                echo '<a class="nav-link" href="Login/login.php" >CART</a>';
               }
             ?>
           </li>
           <li class="nav-item">
             <?php
                if(isset($_SESSION['name'])){
-                 echo '<a class="nav-link" href="../user.php" >'.$_SESSION['name'].'</a>';
+                 echo '<a class="nav-link" href="user.php" >'.$_SESSION['name'].'</a>';
                }
               else{
               
-                echo '<a class="nav-link" href="../Login/login.php">LOGIN</a>';
+                echo '<a class="nav-link" href="Login/login.php">LOGIN</a>';
               }
             ?>
           </li>
@@ -142,30 +141,34 @@
     $file = file_get_contents( $_GET['gender'] . '.json' );
     
     $data = json_decode( $file );
-    switch ($_POST['price']) {
-      case "300":
-        $minP = 300;
-        $maxP = 600;
-        break;
-      case "600":
-        $minP = 600;
-        $maxP = 900;
-        break;
-      case "900":
-        $minP = 900;
-        $maxP = 1200;
-        break;
-      case "1200":
-        $minP = 1200;
-        $maxP = 1500;
-        break;
-      case "1500":
-        $minP = 1500;
-        $maxP = 99999;
-        break;
-      default:
-        $minP = 0;
-        $maxP = 99999;
+    $minP = 0;
+    $maxP = 99999;
+    if (isset($_POST['price'])) {
+      switch ($_POST['price']) {
+        case "300":
+          $minP = 300;
+          $maxP = 600;
+          break;
+        case "600":
+          $minP = 600;
+          $maxP = 900;
+          break;
+        case "900":
+          $minP = 900;
+          $maxP = 1200;
+          break;
+        case "1200":
+          $minP = 1200;
+          $maxP = 1500;
+          break;
+        case "1500":
+          $minP = 1500;
+          $maxP = 99999;
+          break;
+        default:
+          $minP = 0;
+          $maxP = 99999;
+      }
     }
     // ระบบกรอง
     if (isset($_POST['brand'])){
@@ -180,7 +183,7 @@
               if(($shoePrice >= $minP) && ($shoePrice <= $maxP)){
                 $shoeName = $shoes[$j]->name;
                 echo "<a href='detail.php?gender=". $_GET['gender'] ."&name=" . $shoeName . "' class='card'>";
-                  echo '<img src="../picture/' . $_GET['gender'] . '/' . $shoeName . '.jpg" alt="">';
+                  echo '<img src="picture/' . $_GET['gender'] . '/' . $shoeName . '.jpg" alt="">';
                   echo '<div class="des">';
                     echo '<h5>'. $brand .'</h5>';
                     echo '<h4>'. $shoeName .'</h4>';
@@ -203,7 +206,7 @@
           if(($shoePrice >= $minP) && ($shoePrice <= $maxP)){
             $shoeName = $shoes[$j]->name;
             echo "<a href='detail.php?gender=". $_GET['gender'] ."&name=" . $shoeName . "' class='card'>";
-              echo '<img src="../picture/' . $_GET['gender'] . '/' . $shoeName . '.jpg" alt="">';
+              echo '<img src="picture/' . $_GET['gender'] . '/' . $shoeName . '.jpg" alt="">';
               echo '<div class="des">';
                 echo '<h5>'. $brand .'</h5>';
                 echo '<h4>'. $shoeName .'</h4>';
@@ -256,9 +259,9 @@
         <div class="footer-menu-box">
         <strong>PRODUCT</strong>
         <ul>
-          <li><a href="../search.php?gender=men">MEN</a></li>
-          <li><a href="../search.php?gender=women">WOMEN</a></li>
-          <li><a href="../search.php?gender=kids">KIDS</a></li>
+          <li><a href="search.php?gender=men">MEN</a></li>
+          <li><a href="search.php?gender=women">WOMEN</a></li>
+          <li><a href="search.php?gender=kids">KIDS</a></li>
         </ul>
         </div>
       </div>

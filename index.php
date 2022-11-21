@@ -25,34 +25,34 @@
     <div class="container-fluid">
         <ul class="navbar-nav float-left">
           <li class="nav-item">
-            <a class="nav-link" href="../search.php?gender=men">MEN</a>
+            <a class="nav-link" href="search.php?gender=men">MEN</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../search.php?gender=women">WOMEN</a>
+            <a class="nav-link" href="search.php?gender=women">WOMEN</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../search.php?gender=kids">KIDS</a>
+            <a class="nav-link" href="search.php?gender=kids">KIDS</a>
           </li>
         </ul>
-        <a class="navbar-brand" href="../index.php">BENBOOTS SHOP</a>
+        <a class="navbar-brand" href="index.php">BENBOOTS SHOP</a>
         <ul class="navbar-nav float-right"> 
           <li class="nav-item">
             <?php
                if(isset($_SESSION['name'])){
-                 echo '<a class="nav-link" href="../cart.php">CART</a>';
+                 echo '<a class="nav-link" href="cart.php">CART</a>';
                }
               else{
-                echo '<a class="nav-link" href="../Login/login.php" >CART</a>';
+                echo '<a class="nav-link" href="Login/login.php" >CART</a>';
               }
             ?>
           </li>
           <li class="nav-item">
             <?php
                if(isset($_SESSION['name'])){
-                 echo '<a class="nav-link" href="../user.php" >'.$_SESSION['name'].'</a>';
+                 echo '<a class="nav-link" href="user.php" >'.$_SESSION['name'].'</a>';
                }
               else{
-                echo '<a class="nav-link" href="../Login/login.php" >LOGIN</a>';
+                echo '<a class="nav-link" href="Login/login.php" >LOGIN</a>';
               }
             ?>
           </li>
@@ -77,7 +77,7 @@
               $shoePrice = $shoes[1]->price;
               $shoeName = $shoes[1]->name;
               echo "<a href='detail.php?gender=". 'men' ."&name=" . $shoeName . "' class='card'>";
-                echo '<img src="../picture/' . 'men' . '/' . $shoeName . '.jpg" alt="">';
+                echo '<img src="picture/' . 'men' . '/' . $shoeName . '.jpg" alt="">';
                 echo '<div class="des">';
                   echo '<h5>'. $brand .'</h5>';
                   echo '<h4>'. $shoeName .'</h4>';
@@ -102,7 +102,7 @@
               $shoePrice = $shoes[1]->price;
               $shoeName = $shoes[1]->name;
               echo "<a href='detail.php?gender=". 'women' ."&name=" . $shoeName . "' class='card'>";
-                echo '<img src="../picture/' . 'women' . '/' . $shoeName . '.jpg" alt="">';
+                echo '<img src="picture/' . 'women' . '/' . $shoeName . '.jpg" alt="">';
                 echo '<div class="des">';
                   echo '<h5>'. $brand .'</h5>';
                   echo '<h4>'. $shoeName .'</h4>';
@@ -125,7 +125,7 @@
               $shoePrice = $shoes[1]->price;
               $shoeName = $shoes[1]->name;
               echo "<a href='detail.php?gender=". 'kids' ."&name=" . $shoeName . "' class='card'>";
-                echo '<img src="../picture/' . 'kids' . '/' . $shoeName . '.jpg" alt="">';
+                echo '<img src="picture/' . 'kids' . '/' . $shoeName . '.jpg" alt="">';
                 echo '<div class="des">';
                   echo '<h5>'. $brand .'</h5>';
                   echo '<h4>'. $shoeName .'</h4>';
@@ -171,9 +171,9 @@
         <div class="footer-menu-box">
         <strong>PRODUCT</strong>
         <ul>
-          <li><a href="../search.php?gender=men">MEN</a></li>
-          <li><a href="../search.php?gender=women">WOMEN</a></li>
-          <li><a href="../search.php?gender=kids">KIDS</a></li>
+          <li><a href="search.php?gender=men">MEN</a></li>
+          <li><a href="search.php?gender=women">WOMEN</a></li>
+          <li><a href="search.php?gender=kids">KIDS</a></li>
         </ul>
         </div>
       </div>

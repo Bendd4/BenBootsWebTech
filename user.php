@@ -36,33 +36,33 @@ class MyDB extends SQLite3 {
     <div class="container-fluid">
         <ul class="navbar-nav float-left">
           <li class="nav-item">
-            <a class="nav-link" href="../search.php?gender=men">MEN</a>
+            <a class="nav-link" href="search.php?gender=men">MEN</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../search.php?gender=women">WOMEN</a>
+            <a class="nav-link" href="search.php?gender=women">WOMEN</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../search.php?gender=kids">KIDS</a>
+            <a class="nav-link" href="search.php?gender=kids">KIDS</a>
           </li>
         </ul>
-        <a class="navbar-brand" href="../index.php">BENBOOTS SHOP</a>
+        <a class="navbar-brand" href="index.php">BENBOOTS SHOP</a>
         <ul class="navbar-nav float-right"> 
           <li class="nav-item">
-            <a class="nav-link" href="../cart.php">CART</a>
+            <a class="nav-link" href="cart.php">CART</a>
           </li>
           <li class="nav-item">
             <?php
               
                if(isset($_SESSION['name'])){
-                  if($_GET['save']==1){
-                  echo '<a class="nav-link" href="../user.php" >'. $_POST['username'] .'</a>';
+                  if(isset($_GET['save'])){
+                  echo '<a class="nav-link" href="user.php" >'. $_POST['username'] .'</a>';
                }
                   else{
-                 echo '<a class="nav-link" href="../user.php" >'. $_SESSION['name'] .'</a>';
+                 echo '<a class="nav-link" href="user.php" >'. $_SESSION['name'] .'</a>';
                   }
                }
               else{
-                echo '<a class="nav-link" href="../Login/login.php" >LOGIN</a>';
+                echo '<a class="nav-link" href="Login/login.php" >LOGIN</a>';
               }
 
             ?>
@@ -76,7 +76,7 @@ class MyDB extends SQLite3 {
         <div class="row">
     <?php
    
-      if($_GET['save']==1){
+      if(isset($_GET['save'])){
          $user_username_update =  $db->querySingle("UPDATE user set username ='".$_POST['username']."' WHERE username ='".$_SESSION['name']."'");
            // $user_cart_del = $db->querySingle("UPDATE user SET cart = '' WHERE username     ='$uname'");
     $_SESSION['name'] = $_POST['username'];
@@ -88,7 +88,7 @@ class MyDB extends SQLite3 {
          
         // echo$_POST['username'].$_POST['address'];
       }
-      if($_GET['edit']!=1){
+      if(isset($_GET['edit'])!=1){
            $user_address =  $db->querySingle("SELECT address FROM user WHERE username ='".$_SESSION['name']."'");
          echo '<h2 class="text-dark p-2 "> USERNAME : ' . $_SESSION['name'] . '</h2>';
          echo '<h2 class="text-dark p-2"> ADDRESS : ' . $user_address . '</h2>';
@@ -97,7 +97,7 @@ class MyDB extends SQLite3 {
          echo '</a>'; 
          
       }
-      elseif($_GET['edit']==1){
+      elseif(isset($_GET['edit'])==1){
           echo'<form action="user.php?save=1" method="POST" >';
           echo '<h2 class="text-dark p-2 col-sm-12 d-flex flex-row"> USERNAME : ';
          echo'<input type="text" class="form-control w-50 col-sm-6 ms-2" name="username" placeholder="USERNAME">';
@@ -150,7 +150,7 @@ class MyDB extends SQLite3 {
             // echo '<div class="container p-5 bg-light  text-dark h-10" id="'.$i.'"> ';
             //   echo '<div class="row">';
             //   echo '<div class="col-md-6">';
-            //   echo '<img class="col-md-4" style="width:150px;height:150px" src="../picture/'.$text[3].'">';
+            //   echo '<img class="col-md-4" style="width:150px;height:150px" src="picture/'.$text[3].'">';
             //   echo '</div>';
             //   echo '<div class="col-md-6">';
             //   echo '<p>';
@@ -165,7 +165,7 @@ class MyDB extends SQLite3 {
             //   echo '</div>';
             //   echo'</a>';
 
-            echo '<div class="container bg-light p-2 text-dark h-10" id="'.$i.'"> ';
+            echo '<div class="container bg-light p-2 text-dark h-10"> ';
               echo '<div class="row">';
                 echo '<div class="col-sm-6">';
                   echo '<h5>' . $text[0] . '</h5>';
@@ -220,9 +220,9 @@ class MyDB extends SQLite3 {
         <div class="footer-menu-box">
         <strong>PRODUCT</strong>
         <ul>
-          <li><a href="../search.php?gender=men">MEN</a></li>
-          <li><a href="../search.php?gender=women">WOMEN</a></li>
-          <li><a href="../search.php?gender=kids">KIDS</a></li>
+          <li><a href="search.php?gender=men">MEN</a></li>
+          <li><a href="search.php?gender=women">WOMEN</a></li>
+          <li><a href="search.php?gender=kids">KIDS</a></li>
         </ul>
         </div>
       </div>

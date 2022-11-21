@@ -46,26 +46,26 @@ $db = new MyDB();
         <div class="container-fluid">
             <ul class="navbar-nav float-left">
                 <li class="nav-item">
-                    <a class="nav-link" href="../search.php?gender=men">MEN</a>
+                    <a class="nav-link" href="search.php?gender=men">MEN</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../search.php?gender=women">WOMEN</a>
+                    <a class="nav-link" href="search.php?gender=women">WOMEN</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../search.php?gender=kids">KIDS</a>
+                    <a class="nav-link" href="search.php?gender=kids">KIDS</a>
                 </li>
             </ul>
-            <a class="navbar-brand" href="../index.php">BENBOOTS SHOP</a>
+            <a class="navbar-brand" href="index.php">BENBOOTS SHOP</a>
             <ul class="navbar-nav float-right">
                 <li class="nav-item">
-                    <a class="nav-link" href="../cart.php">CART</a>
+                    <a class="nav-link" href="cart.php">CART</a>
                 </li>
                 <li class="nav-item">
                     <?php
                     if (isset($_SESSION['name'])) {
-                        echo '<a class="nav-link" href="../user.php" >' . $_SESSION['name'] . '</a>';
+                        echo '<a class="nav-link" href="user.php" >' . $_SESSION['name'] . '</a>';
                     } else {
-                        echo '<a class="nav-link" href="../Login/login.php" >LOGIN</a>';
+                        echo '<a class="nav-link" href="Login/login.php" >LOGIN</a>';
                     }
                     ?>
                 </li>
@@ -118,7 +118,7 @@ $db = new MyDB();
             echo '<div class="container p-5 bg-white mt-5 w-75" text-dark" id="'.$i.'"> ';
             echo '<div class="row">';
             echo '<div class="col-md-4">';
-            echo '<img class="col-md-4" style="width:150px;height:150px" src="../picture/'.$text[3].'">';
+            echo '<img class="col-md-4" style="width:150px;height:150px" src="picture/'.$text[3].'">';
             echo '</div>';
             echo '<div class="col-md-4">';
             echo '<p>';
@@ -190,9 +190,9 @@ $db = new MyDB();
         <div class="footer-menu-box">
         <strong>PRODUCT</strong>
         <ul>
-          <li><a href="../search.php?gender=men">MEN</a></li>
-          <li><a href="../search.php?gender=women">WOMEN</a></li>
-          <li><a href="../search.php?gender=kids">KIDS</a></li>
+          <li><a href="search.php?gender=men">MEN</a></li>
+          <li><a href="search.php?gender=women">WOMEN</a></li>
+          <li><a href="search.php?gender=kids">KIDS</a></li>
         </ul>
         </div>
       </div>

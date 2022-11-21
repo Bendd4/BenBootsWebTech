@@ -7,12 +7,8 @@
            $this->open('user_db/user.db');
         }
      }
-    
      // Open Database 
      $db = new MyDB();
-          
-
-
 ?>
 
 <html lang="en">
@@ -40,34 +36,34 @@
     <div class="container-fluid">
         <ul class="navbar-nav float-left">
           <li class="nav-item">
-            <a class="nav-link" href="../search.php?gender=men">MEN</a>
+            <a class="nav-link" href="search.php?gender=men">MEN</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../search.php?gender=women">WOMEN</a>
+            <a class="nav-link" href="search.php?gender=women">WOMEN</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../search.php?gender=kids">KIDS</a>
+            <a class="nav-link" href="search.php?gender=kids">KIDS</a>
           </li>
         </ul>
-        <a class="navbar-brand" href="../index.php">BENBOOTS SHOP</a>
+        <a class="navbar-brand" href="index.php">BENBOOTS SHOP</a>
         <ul class="navbar-nav float-right"> 
           <li class="nav-item">
             <?php
                if(isset($_SESSION['name'])){
-                 echo '<a class="nav-link" href="../cart.php">CART</a>';
+                 echo '<a class="nav-link" href="cart.php">CART</a>';
                }
               else{
-                echo '<a class="nav-link" href="../Login/login.php" >CART</a>';
+                echo '<a class="nav-link" href="Login/login.php" >CART</a>';
               }
             ?>
           </li>
           <li class="nav-item">
             <?php
                if(isset($_SESSION['name'])){
-                 echo '<a class="nav-link" href="../user.php" >' . $_SESSION['name'] . '</a>';
+                 echo '<a class="nav-link" href="user.php" >' . $_SESSION['name'] . '</a>';
                }
               else{
-                echo '<a class="nav-link" href="../Login/login.php" >LOGIN</a>';
+                echo '<a class="nav-link" href="Login/login.php" >LOGIN</a>';
               }
             ?>
           </li>
@@ -98,7 +94,7 @@
         <div class="product">
   
         <?php
-          echo "<img src='../picture/" . $_GET['gender'] . '/' . $_GET['name'] . ".jpg' alt=''>";
+          echo "<img src='picture/" . $_GET['gender'] . '/' . $_GET['name'] . ".jpg' alt=''>";
         ?>
         </div>
 
@@ -279,51 +275,55 @@
             echo "<a href='detail.php?gender=". $_GET['gender'] ."&name=" . $shoeName . "&wish=true'>";
             $user_wish = $db->querySingle("SELECT wishlist FROM user WHERE username ='".$_SESSION['name']."'");
             $has = 0;
-              $wish = trim($user_wish, ',');
-              $wish = explode(',', $wish);
-              foreach ($wish as $wish) {
-                 $wish = explode(':', $wish);
-                 if ($wish[0] == $_GET['name']){
-                   $has = 1;
-                 }
-              }
+            $wish = trim($user_wish, ',');
+            $wish = explode(',', $wish);
+            foreach ($wish as $wish) {
+               $wish = explode(':', $wish);
+               if ($wish[0] == $_GET['name']){
+                 $has = 1;
+               }
+            }
+            if(isset($_GET['wish'])){
               if($_GET['wish']==true&&$has==0){
-                  $user_wish_add = $db->querySingle("UPDATE user SET wishlist = '"
-                    . $user_wish .
-                     $shoeName .
-                    ":".$_GET['gender']."/".$_GET['name'].".jpg".
-                    ":".$_GET['gender'].
-                    ",".
-                    "'
-                    WHERE username ='".$_SESSION['name']."'");
-                echo'<button class="btn btn-dark add">Remove from wishlist</button>';   
-              }
-              else if($_GET['wish']==true&&$has==1){
-                 $user_wish = $db->querySingle("SELECT wishlist FROM user WHERE username ='".$_SESSION['name']."'");
-                  $total_wish = '';
-                 $wish = trim($user_wish, ',');
-                 $wish = explode(',', $wish);
-                 foreach ($wish as $wish) {
-                     $wish = explode(':', $wish);
-                     if ($wish[0] == $_GET['name']){
-                      
-                     }
-                     else{
-                       $total_wish = $total_wish.$wish[0].":".$wish[1].":".$wish[2].",";
-                         $user_wish_add = $db->querySingle("UPDATE user SET wishlist = '". $total_wish."' WHERE username ='".$_SESSION['name']."'");
-                     }
-                 }
-              
-                echo'<button class="btn btn-dark add">Add to wishlist</button>';
-              }
-              else if($_GET['wish']!=true&&$has==1){
+                $user_wish_add = $db->querySingle("UPDATE user SET wishlist = '"
+                . $user_wish .
+                 $shoeName .
+                ":".$_GET['gender']."/".$_GET['name'].".jpg".
+                ":".$_GET['gender'].
+                ",".
+                "'
+                WHERE username ='".$_SESSION['name']."'");
                 echo'<button class="btn btn-dark add">Remove from wishlist</button>';
               }
-              else if($_GET['wish']!=true&&$has==0){
+              else if($_GET['wish']==true&&$has==1){
+                $user_wish = $db->querySingle("SELECT wishlist FROM user WHERE username ='".$_SESSION['name']."'");
+                $total_wish = '';
+                $wish = trim($user_wish, ',');
+                $wish = explode(',', $wish);
+                foreach ($wish as $wish) {
+                  $wish = explode(':', $wish);
+                  if ($wish[0] == $_GET['name']){
+                      
+                  }
+                  else{
+                    $total_wish = $total_wish.$wish[0].":".$wish[1].":".$wish[2].",";
+                    $user_wish_add = $db->querySingle("UPDATE user SET wishlist = '". $total_wish."' WHERE username ='".$_SESSION['name']."'");
+                  }
+                }
                 echo'<button class="btn btn-dark add">Add to wishlist</button>';
               }
-
-            echo'</a>';
+              // else if($_GET['wish']!=true&&$has==1){
+              //   echo'<button class="btn btn-dark add">Remove from wishlist</button>';
+              // }
+              // else if($_GET['wish']!=true&&$has==0){
+              //   echo'<button class="btn btn-dark add">Add to wishlist</button>';
+              // }
+            }
+            else{
+              echo'<button class="btn btn-dark add">Add to wishlist</button>';
+            }
+          echo'</a>';
+              
          ?>
         </div>
         
@@ -380,11 +380,11 @@
             $uname = $_SESSION['name'];
               if(isset($_SESSION['name'])){
                 echo "<button type='submit' class='btn btn-dark add'>Add to CART</button>";
-                  if($_GET['add']==true){
+                  if(isset($_GET['add'])){
                     $user_cart = $db->querySingle("SELECT cart FROM user WHERE username ='$uname'");
                     $user_cart_add = $db->querySingle("UPDATE user SET cart = '"
                     . $user_cart .
-                     $shoeName .
+                    $shoeName .
                     ":".$_POST['size'].
                     ":".$_POST['quantity'].  
                     ":".$_GET['gender']."/".$_GET['name'].".jpg".
@@ -397,7 +397,7 @@
                     }
                   }
           else{
-            echo'<a href="../Login/login.php" class="add"><button class="btn btn-dark">Add to CART</button></a>';
+            echo'<a href="Login/login.php" class="add"><button class="btn btn-dark">Add to CART</button></a>';
           }
           
           // Close database
@@ -406,7 +406,7 @@
           ?>
         </form>
         </div>
-             <?php if($_GET['add']==true) { ?>
+             <?php  if(isset($_GET['add'])) { ?>
                   <br>
                   <div class="alert alert-success " role="alert">
                      Added to cart
@@ -451,9 +451,9 @@
         <div class="footer-menu-box">
         <strong>PRODUCT</strong>
         <ul>
-          <li><a href="../search.php?gender=men">MEN</a></li>
-          <li><a href="../search.php?gender=women">WOMEN</a></li>
-          <li><a href="../search.php?gender=kids">KIDS</a></li>
+          <li><a href="search.php?gender=men">MEN</a></li>
+          <li><a href="search.php?gender=women">WOMEN</a></li>
+          <li><a href="search.php?gender=kids">KIDS</a></li>
         </ul>
         </div>
       </div>
