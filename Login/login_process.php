@@ -34,30 +34,31 @@
         else{
             $sql ="SELECT * from user WHERE username = '$username' ";
             $ret = $db->query($sql);
-            while($row = $ret->fetchArray(SQLITE3_ASSOC) ) {
-            
-               if($username==$row['username']&&$password==$row['password']){
-                header("location: ../index.php");
-                $_SESSION['name'] = $username;
-                exit();
-               }
-               else if($username==$row['username']&&$password!=$row['password']){
-                $_SESSION['error'] = "Wrong Password";
-                header("location: login.php");
-                exit();
-               }
-               else if($username!=$row['username']){
-                $_SESSION['error'] = "Invalid Username";
-                header("location: login.php");
-              
+           while($row = $ret->fetchArray(SQLITE3_ASSOC)){
+                $username2 = $row['username'];
+                $password2 = $row['password'];
                
             }
+            if($password==$password2){
+                $_SESSION['name'] = $username;
+                header("location: ../index.php");
+            }
+            else if($username!=$username2){
+                    $_SESSION['error'] = "Invalid username";
+                    header("location: login.php"); 
+            }
+            
+            else{
+                $_SESSION['error'] = "wrong password";
+                header("location: login.php");
+            }
+           
 
             }
          
         }
 
-    }
+    
 
 
 ?>

@@ -4,28 +4,23 @@
     "shoes" : [
       {
         "name" : "NIKE Victori One",
-        "price" : 1100,
-        "pic" : "[insert pic link here]"
+        "price" : 1100
       },
       {
         "name" : "NIKE Jordan Break",
-        "price" : 1100,
-        "pic" : "../picture/men/NIKE Jordan Break"
+        "price" : 1100
       },
       {
         "name" : "NIKE Offcourt",
-        "price" : 1300,
-        "pic" : "[insert pic link here]"
+        "price" : 1300
       },
       {
         "name" : "NIKE Victori One Print",
-        "price" : 1300,
-        "pic" : "[insert pic link here]"
+        "price" : 1300
       },
       {
         "name" : "NIKE Oneonta",
-        "price" : 1680,
-        "pic" : "[insert pic link here]"
+        "price" : 1680
       }
     ]
   },
@@ -34,28 +29,23 @@
     "shoes" : [
       {
         "name" : "ADIDAS Adilette Shower",
-        "price" : 1100,
-        "pic" : "[insert pic link here]"
+        "price" : 1100
       },
        {
         "name" : "ADIDAS Adilette TND",
-        "price" : 1400,
-        "pic" : "[insert pic link here]"
+        "price" : 1400
       },
       {
         "name" : "ADIDAS Adilette Comfort",
-        "price" : 1500,
-        "pic" : "[insert pic link here]"
+        "price" : 1500
       },
       {
         "name" : "ADIDAS Alphabounce",
-        "price" : 1800,
-        "pic" : "[insert pic link here]"
+        "price" : 1800
       },
        {
         "name" : "ADIDAS Adilette Cloudfoam",
-        "price" : 1000,
-        "pic" : "[insert pic link here]"
+        "price" : 1000
       }
     ]
   },
@@ -64,28 +54,23 @@
     "shoes" : [
       {
         "name" : "FILA Born",
-        "price" : 390,
-        "pic" : "[insert pic link here]"
+        "price" : 390
       },
       {
         "name" : "FILA Feel-SB",
-        "price" : 390,
-        "pic" : "[insert pic link here]"
+        "price" : 390
       },
        {
         "name" : "FILA Shade",
-        "price" : 390,
-        "pic" : "[insert pic link here]"
+        "price" : 390
       },
        {
         "name" : "FILA Mozarte",
-        "price" : 1290,
-        "pic" : "[insert pic link here]"
+        "price" : 1290
       },
        {
         "name" : "FILA Walk",
-        "price" : 690,
-        "pic" : "[insert pic link here]"
+        "price" : 690
       }
     ]
   },
@@ -94,28 +79,23 @@
     "shoes" : [
       {
         "name" : "SKECHERS On-The-GO Hyper Slide - Hyper Comfort",
-        "price" : 1990,
-        "pic" : "[insert pic link here]"
+        "price" : 1990
       },
       {
         "name" : "SKECHERS Go Walk 5 Foamies - Key Choice",
-        "price" : 1790,
-        "pic" : "[insert pic link here]"
+        "price" : 1790
       },
       {
         "name" : "SKECHERS Foamies: Arch Fit - Feelin Fresh",
-        "price" : 1590,
-        "pic" : "[insert pic link here]"
+        "price" : 1590
       },
       {
         "name" : "SKECHERS Foamies Darvon",
-        "price" : 690,
-        "pic" : "[insert pic link here]"
+        "price" : 690
       },
       {
         "name" : "SKECHERS One Piece Gambix 2.0",
-        "price" : 1090,
-        "pic" : "[insert pic link here]"
+        "price" : 1090
       }
     ]
   }

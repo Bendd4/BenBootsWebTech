@@ -4,28 +4,23 @@
     "shoes" : [
       {
         "name" : "NIKE Offcourt Duo Slide",
-        "price" : 905,
-        "pic" : "[insert pic link here]"
+        "price" : 905
       },
       {
         "name" : "NIKE BLACK NIKE Vista",
-        "price" : 1600,
-        "pic" : "[insert pic link here]"
+        "price" : 1600
       },
       {
         "name" : "NIKE Jordan Sophia",
-        "price" : 2500,
-        "pic" : "[insert pic link here]"
+        "price" : 2500
       },
       {
         "name" : "NIKE Victori One Shower Slide",
-        "price" : 810,
-        "pic" : "[insert pic link here]"
+        "price" : 810
       },
       {
         "name" : "NIKE Icon Classic",
-        "price" : 2390,
-        "pic" : "[insert pic link here]"
+        "price" : 2390
       }
     ]
   },
@@ -33,29 +28,24 @@
     "brand" : "Adidas",
     "shoes" : [
       {
-        "name" : "ADIDAS Originals Women's Cloudfoam",
-        "price" : 1100,
-        "pic" : "[insert pic link here]"
+        "name" : "ADIDAS Originals Women Cloudfoam",
+        "price" : 1100
       },
        {
-        "name" : "ADIDAS Women's Comfort",
-        "price" : 1300,
-        "pic" : "[insert pic link here]"
+        "name" : "ADIDAS Women Comfort",
+        "price" : 1300
       },
       {
         "name" : "ADIDAS Adilette Ayoon Slides",
-        "price" : 2000,
-        "pic" : "[insert pic link here]"
+        "price" : 2000
       },
       {
         "name" : "ADIDAS Stella McCartney",
-        "price" : 3000,
-        "pic" : "[insert pic link here]"
+        "price" : 3000
       },
        {
         "name" : "ADIDAS SWIM Adilette",
-        "price" : 1400,
-        "pic" : "[insert pic link here]"
+        "price" : 1400
       }
     ]
   },
@@ -64,28 +54,23 @@
     "shoes" : [
       {
         "name" : "FILA Supreme Velcro",
-        "price" : 590,
-        "pic" : "[insert pic link here]"
+        "price" : 590
       },
       {
         "name" : "FILA Chury",
-        "price" : 690,
-        "pic" : "[insert pic link here]"
+        "price" : 690
       },
        {
         "name" : "FILA Tesoro-ST Pink",
-        "price" : 690,
-        "pic" : "[insert pic link here]"
+        "price" : 690
       },
        {
         "name" : "FILA Gimmick",
-        "price" : 490,
-        "pic" : "[insert pic link here]"
+        "price" : 490
       },
        {
         "name" : "FILA Artist Sling Back",
-        "price" : 690,
-        "pic" : "[insert pic link here]"
+        "price" : 690
       }
     ]
   },
@@ -94,28 +79,23 @@
     "shoes" : [
       {
         "name" : "SKECHERS Side Lines 2.0 - Repped",
-        "price" : 790,
-        "pic" : "[insert pic link here]"
+        "price" : 790
       },
       {
         "name" : "SKECHERS Foamies: Cali Breeze 2.0",
-        "price" : 890,
-        "pic" : "[insert pic link here]"
+        "price" : 890
       },
       {
         "name" : "SKECHERS Go Walk Arch Fit - Treasured",
-        "price" : 2190,
-        "pic" : "[insert pic link here]"
+        "price" : 2190
       },
       {
         "name" : "SKECHERS Foamies Max Cushioning",
-        "price" : 1890,
-        "pic" : "[insert pic link here]"
+        "price" : 1890
       },
       {
-        "name" : "SKECHERS Cali D'Lux Walker",
-        "price" : 1990,
-        "pic" : "[insert pic link here]"
+        "name" : "SKECHERS Cali D Lux Walker",
+        "price" : 1990
       }
     ]
   }

@@ -4,28 +4,23 @@
     "shoes" : [
       {
         "name" : "NIKE Kawa",
-        "price" : 900,
-        "pic" : "[insert pic link here]"
+        "price" : 900
       },
       {
         "name" : "NIKE Kawa Slides",
-        "price" : 700,
-        "pic" : "[insert pic link here]"
+        "price" : 700
       },
       {
         "name" : "NIKE Sunray Adjust",
-        "price" : 1300,
-        "pic" : "[insert pic link here]"
+        "price" : 1300
       },
       {
         "name" : "NIKE Jordan Play",
-        "price" : 1200,
-        "pic" : "[insert pic link here]"
+        "price" : 1200
       },
       {
         "name" : "NIKE Playscape",
-        "price" : 880,
-        "pic" : "[insert pic link here]"
+        "price" : 880
       }
     ]
   },
@@ -34,28 +29,23 @@
     "shoes" : [
       {
         "name" : "ADIDAS Adilette ADJUSTABLE",
-        "price" : 1100,
-        "pic" : "[insert pic link here]"
+        "price" : 1100
       },
        {
         "name" : "ADIDAS Adilette Aqua",
-        "price" : 700,
-        "pic" : "[insert pic link here]"
+        "price" : 700
       },
       {
         "name" : "ADIDAS Adilette Comfort X LEGO",
-        "price" : 1200,
-        "pic" : "[insert pic link here]"
+        "price" : 1200
       },
       {
         "name" : "ADIDAS Adilette Comfort Minnie Mouse",
-        "price" : 1200,
-        "pic" : "[insert pic link here]"
+        "price" : 1200
       },
        {
         "name" : "ADIDAS Altaswim",
-        "price" : 1100,
-        "pic" : "[insert pic link here]"
+        "price" : 1100
       }
     ]
   },
@@ -64,28 +54,23 @@
     "shoes" : [
       {
         "name" : "FILA RGB",
-        "price" : 450,
-        "pic" : "[insert pic link here]"
+        "price" : 450
       },
       {
         "name" : "FILA Sleek Marble",
-        "price" : 780,
-        "pic" : "[insert pic link here]"
+        "price" : 780
       },
        {
         "name" : "FILA Slides Kids",
-        "price" : 330,
-        "pic" : "[insert pic link here]"
+        "price" : 330
       },
        {
         "name" : "FILA Nuovo",
-        "price" : 590,
-        "pic" : "[insert pic link here]"
+        "price" : 590
       },
        {
         "name" : "FILA Holo",
-        "price" : 450,
-        "pic" : "[insert pic link here]"
+        "price" : 450
       }
     ]
   },
@@ -94,28 +79,23 @@
     "shoes" : [
       {
         "name" : "SKECHERS Gambix",
-        "price" : 780,
-        "pic" : "[insert pic link here]"
+        "price" : 780
       },
       {
         "name" : "SKECHERS Foamies: Cali Blast",
-        "price" : 780,
-        "pic" : "[insert pic link here]"
+        "price" : 780
       },
       {
         "name" : "SKECHERS Sargo Sunview",
-        "price" : 1390,
-        "pic" : "[insert pic link here]"
+        "price" : 1390
       },
       {
         "name" : "SKECHERS We Bare Bears Pop Ups 2 BOBS",
-        "price" : 1290,
-        "pic" : "[insert pic link here]"
+        "price" : 1290
       },
       {
         "name" : "SKECHERS Foamies x Pokemon Collection",
-        "price" : 1990,
-        "pic" : "[insert pic link here]"
+        "price" : 1990
       }
     ]
   }

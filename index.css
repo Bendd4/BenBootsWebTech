@@ -162,3 +162,149 @@ input.form-check-input{
     margin-top: 16.5vh;
   }
 }
+
+.butt_container{
+  background-color: white;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.butt_container h3{
+  color: black;
+  text-align: center;
+  border: 2px solid #ffffff;
+  margin: 20px;
+}
+
+.butt_container .btn{
+  color: white;
+  background-color: black;
+  border: 2px solid #ffffff;
+  margin: 20px;
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ffffff;
+}
+
+footer {
+  background-color: white;
+  position: relative;
+  padding: 5px 10px;
+  margin-top: 50px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 85%;
+  margin: 10px auto;
+}
+
+.footer-brand-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 120px;
+}
+
+.footer-brand {
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: black;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.footer-brand-container span {
+  color: gray;
+  font-weight: 500;
+  margin: 10px;
+  font-size: 15px;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-social a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 6px;
+  color: black;
+  font-size: 30px;
+}
+
+.footer-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-menu-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0px 30px;
+}
+
+.footer-menu-box strong {
+  color: black;
+  font-size: 17px;
+  font-weight: 700;
+  text-tranform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.footer-menu-box p {
+  color: gray;
+  font-size: 15px;
+  margin: 5px 0px;
+}
+
+.footer-menu-box ul li a,
+.footer-menu-box ul li {
+  color: gray;
+  font-size: 15px;
+  margin: 5px 0px;
+}
+
+.footer-menu-box ul li a:hover {
+  color: black;
+  transition: all ease 0.3;
+}
+
+.copyright {
+  padding: 15px;
+  color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+}
